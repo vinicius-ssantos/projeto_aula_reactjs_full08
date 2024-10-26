@@ -3,7 +3,7 @@ type Props = {
     id: string,
     label: string,
     value?: string,
-    type?: React.HTMLInputTypeAttribute | undefined,
+    type?: React.HTMLInputTypeAttribute ,
     change: (value: string) => void
 }
 
@@ -14,7 +14,7 @@ export default function MyInput(props: Props) {
             <input
                 id={props.id}
                 value={props.value}
-                onChange={event => props.change(event.target.value)}
+                onChange={e => props.change(e.target.value) }
                 type={props.type === undefined ? "text" : props.type}
             />
         </div>

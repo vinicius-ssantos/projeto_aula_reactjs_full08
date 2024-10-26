@@ -1,7 +1,8 @@
-import React from 'react';
-import './index.scss';
-import MyInput from "../../components/MyInput";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+
+import MyInput from '../../components/MyInput'
+
+import './index.scss'
 
 export default function LoginPage() {
     const navigate = useNavigate();
@@ -9,10 +10,10 @@ export default function LoginPage() {
     let password = '';
 
     function signIn() {
-        if (username === 'vinicius' && password === 'vinicius') {
-                navigate('/user/create');
+        if (username === 'uedsonreis' && password === '123456') {
+            navigate('/user/create')
         } else {
-            alert('Login ou senha invalidos!');
+            alert('Login/senha inválido(a)')
         }
     }
 
@@ -23,8 +24,8 @@ export default function LoginPage() {
                 Página de Acesso
             </header>
             <main>
-                <MyInput id={username} label='Login' change={value => username = value}/>
-                <MyInput id={password} label='Senha' change={value => password = value} type='password'/>
+                <MyInput id='username' label='Login' change={value => username = value} />
+                <MyInput id='password' label='Senha' change={value => password = value} type='password' />
             </main>
             <footer>
                 <button onClick={signIn}>Entrar</button>

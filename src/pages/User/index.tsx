@@ -1,6 +1,8 @@
-import React from "react";
-import './index.scss';
-import MyInput from "../../components/MyInput";
+import React from 'react'
+
+import MyInput from '../../components/MyInput'
+
+import './index.scss'
 
 
 
@@ -8,9 +10,11 @@ import MyInput from "../../components/MyInput";
 
 export default function UserPage(){
 
-    const [name,setName] =React.useState('');
-    const [username,setUsername] =React.useState('');
-    const [password,setPassword] =React.useState('');
+    // Carragar os dados para atualizar o Usuário
+
+    const [name, setName] = React.useState('')
+    const [username, setUsername] = React.useState('')
+    const [password, setPassword] = React.useState('')
 
     let confirmPass = '';
 
@@ -44,9 +48,6 @@ export default function UserPage(){
                 <MyInput id='username' label='Login'  value={username} change={setUsername}/>
                 <MyInput id='password' label='Senha' type='password'  change={setPassword}/>
                 <MyInput id='confirmPass' label='Confirmar Senha' type='password'  change={value=>confirmPass=value}/>
-
-
-
             </main>
             <footer>
                 <button onClick={save}>Salvar</button>
