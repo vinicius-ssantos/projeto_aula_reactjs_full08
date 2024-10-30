@@ -13,18 +13,18 @@ export default function UserPage() {
 
     const navigate = useNavigate()
 
-    const [name, setName] = React.useState('admin')
-    const [username, setUsername] = React.useState('admin')
-    const [password, setPassword] = React.useState('admin')
+    const [name, setName] = React.useState('')
+    const [username, setUsername] = React.useState('')
+    const [password, setPassword] = React.useState('')
 
     let confirmPass = ''
 
-    // React.useEffect(() => {
-    //     if (!hasToken()) {
-    //         alert('Usuário não logado!')
-    //         navigate('/login')
-    //     }
-    // })
+    React.useEffect(() => {
+        if (!hasToken()) {
+            alert('Usuário não logado!')
+            navigate('/login')
+        }
+    })
 
     function goBack() {
         navigate(-1)

@@ -17,6 +17,14 @@ export class RoleRepository extends AbstractRepository<Role> {
             resolve(this.document.find(role => role.name === name))
         })
     }
+
+
+
+    public async findByDescription(description: string): Promise<Role | null> {
+        return new Promise((resolve, reject) => {
+            resolve(this.document.find(role => role.description === description))
+        })
+    }
     
     public async create(record: Role): Promise<Role | null> {
         const alreadyExist = await this.findByName(record.name)
